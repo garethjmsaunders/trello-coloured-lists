@@ -2,7 +2,7 @@
 // @name Trello boards (generic)
 // @description Highlight columns
 // @include /^https?://trello\.com/?.*$/
-// @require https://code.jquery.com/jquery-1.11.0.min.js
+// @require https://code.jquery.com/jquery-3.2.1.min.js
 // @version 2.7.0
 // @copyright 2017, Gareth J M Saunders
 // ==/UserScript==
