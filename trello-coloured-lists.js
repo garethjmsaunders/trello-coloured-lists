@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name Trello boards (generic)
 // @description Highlight columns
-// @match https://trello.com/*
+// @include /^https?://trello\.com/?.*$/
 // @require https://code.jquery.com/jquery-1.11.0.min.js
-// @version 2.6
-// @copyright 2014, Gareth J M Saunders
+// @version 2.7.0
+// @copyright 2017, Gareth J M Saunders
 // ==/UserScript==
 
 // TODO Create JSON array of columns: See http://www.w3schools.com/js/js_json.asp
