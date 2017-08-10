@@ -3,8 +3,8 @@
 // @description Highlight columns
 // @include /^https?://trello\.com/?.*$/
 // @require https://code.jquery.com/jquery-3.2.1.min.js
-// @version 2.7.0
-// @copyright 2017, Gareth J M Saunders
+// @version 3.0.0
+// @copyleft 2014–2017, Gareth J M Saunders
 // ==/UserScript==
 
 // TODO Create JSON array of columns: See http://www.w3schools.com/js/js_json.asp
