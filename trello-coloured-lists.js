@@ -8,6 +8,7 @@
 // ==/UserScript==
 
 // TODO Create JSON array of columns: See http://www.w3schools.com/js/js_json.asp
+// TODO Add license
 
 $(document).ready(function() {
 
