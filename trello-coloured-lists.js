@@ -60,7 +60,7 @@ $(document).ready(function() {
         console.log('GJMS: Changing column colours...');
 
         // Red - danger
-        $("textarea:contains('Bugs'), textarea:contains('Issues'), textarea:contains('Fix')")
+        $("textarea:contains('Bugs'), textarea:contains('Fix'), textarea:contains('Issues')")
         .parents('.list').css('background', red);
 
         // Orange - warning
@@ -72,7 +72,7 @@ $(document).ready(function() {
         .parents('.list').css('background', yellow);
 
         // Green - in progress
-        $("textarea:contains('In progress'), textarea:contains('Doing')")
+        $("textarea:contains('Doing'), textarea:contains('In progress')")
         .parents('.list').css('background', green);
 
         // Blue - planning
@@ -90,7 +90,7 @@ $(document).ready(function() {
         .parents('.list').css('background', magenta);
 
         // Dark Grey, white text - complete
-        $("textarea:contains('Reference'), textarea:contains('Done')")
+        $("textarea:contains('Done'), textarea:contains('Reference')")
         .css('color', white)
         .parents('.list').css('background', dark);
 
