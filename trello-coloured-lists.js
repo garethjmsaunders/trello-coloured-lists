@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Trello coloured lists
-// @version      4.2.1
+// @version      4.3.0
 // @description  Add coloured backgrounds to Trello lists.
 // @author       Gareth J M Saunders
 // @license      GNU General Public License v3.0
@@ -30,6 +30,25 @@ $(document).ready(function() {
         white     = '#ffffff'; // white
 
 
+    /** Ensure colour of labels while editing is consistent regardless of background colour
+     *
+     * @version 1.0.0 2017-11-04
+     * @since   4.3.0
+     */
+
+    $("<style type='text/css'>textarea.js-list-name-input.is-editing { background-color: #e8e8e8 !important; color: black !important; }</style>").appendTo("head");
+
+
+    /** Scrum for Trello - Ensure list totals are visible on dark lists
+     *
+     * @version 1.0.0 2017-11-04
+     * @see     http://scrumfortrello.com/
+     * @since   4.3.0
+     */
+
+    $("<style type='text/css'>.js-dark-list .points { color: white !important; } .js-dark-list .cpoints { color: #e8e8e8 !important; } }</style>").appendTo("head");
+
+
     /** Make jQuery :contains() selector case insensitive
      *
      * @version 1.0.0 2017-11-03
@@ -50,9 +69,9 @@ $(document).ready(function() {
      *  Triggered by hover on the page
      *
      * @version 4.0.0 2017-11-03
-     * @author Gareth J M Saunders <gareth@garethjmsaunders.co.uk>
+     * @author  Gareth J M Saunders <gareth@garethjmsaunders.co.uk>
      * @license http://opensource.org/licenses/gpl-license.php, GNU Public License
-     * @since 3.9.0
+     * @since   3.9.0
      */
 
     $('body').hover(function() {
@@ -82,17 +101,20 @@ $(document).ready(function() {
         // Violet, white text
         $("textarea:contains('Waiting for')")
         .css('color', white)
-        .parents('.list').css('background', violet);
+        .parents('.list').css('background', violet)
+        .addClass('js-dark-list');
 
         // Magenta, white text
         $("textarea:contains('Archive')")
         .css('color', white)
-        .parents('.list').css('background', magenta);
+        .parents('.list').css('background', magenta)
+        .addClass('js-dark-list');
 
         // Dark Grey, white text - complete
         $("textarea:contains('Done'), textarea:contains('Reference')")
         .css('color', white)
-        .parents('.list').css('background', dark);
+        .parents('.list').css('background', dark)
+        .addClass('js-dark-list');
 
     });
 
