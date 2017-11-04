@@ -1,8 +1,9 @@
 // ==UserScript==
 // @name         Trello coloured lists
-// @version      4.1.0
+// @version      4.2.0
 // @description  Add coloured backgrounds to Trello lists.
 // @author       Gareth J M Saunders
+// @license      GNU General Public License v3.0
 // @homepageURL  https://github.com/garethjmsaunders/trello-coloured-lists/
 // @supportURL   https://github.com/garethjmsaunders/trello-coloured-lists/issues
 // @updateURL    https://github.com/garethjmsaunders/trello-coloured-lists/blob/master/trello-coloured-lists.js
