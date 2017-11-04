@@ -1,11 +1,13 @@
 // ==UserScript==
-// @name         Trello colour columns
-// @namespace    http://www.garethjmsaunders.co.uk/trello-colour-columns/
-// @version      4.0.0
-// @description  Highlight columns in Trello
+// @name         Trello coloured lists
+// @version      4.1.0
+// @description  Add coloured backgrounds to Trello lists.
 // @author       Gareth J M Saunders
+// @homepageURL  https://github.com/garethjmsaunders/trello-coloured-lists/
+// @supportURL   https://github.com/garethjmsaunders/trello-coloured-lists/issues
+// @updateURL    https://github.com/garethjmsaunders/trello-coloured-lists/blob/master/trello-coloured-lists.js
 // @include      https://trello.com/*
-// @require https://code.jquery.com/jquery-3.2.1.min.js
+// @require      https://code.jquery.com/jquery-3.2.1.min.js
 // @grant        none
 // ==/UserScript==
 
@@ -13,6 +15,7 @@ $(document).ready(function() {
 
     console.log('GJMS: Hey! Trello colour columns Tampermonkey script is running...');
     console.log('GJMS: Loading colours...');
+
     var red       = '#e06666', // indianred
         orange    = '#f6b26b', // sandybrown
         yellow    = '#ffd966', // khaki
