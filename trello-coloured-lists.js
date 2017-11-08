@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Trello coloured lists
-// @version      4.3.0
+// @version      4.5.0
 // @description  Add coloured backgrounds to Trello lists.
 // @author       Gareth J M Saunders
 // @license      GNU General Public License v3.0
@@ -24,6 +24,7 @@ $(document).ready(function() {
         blue      = '#6fa8dc', // cornflowerblue
         violet    = '#674ea7', // slateblue
         magenta   = '#a64d79', // royalheath
+        cyan      = '#45818e', // steelblue
 
         black     = '#333333', // nightrider
         dark      = '#666666', // dimgray
@@ -46,7 +47,7 @@ $(document).ready(function() {
      * @since   4.3.0
      */
 
-    $("<style type='text/css'>.js-dark-list .points { color: white !important; } .js-dark-list .cpoints { color: #e8e8e8 !important; } }</style>").appendTo("head");
+    $("<style type='text/css'>.js-dark-list .points, .js-dark-list .js-open-card-composer { color: white ; } .js-dark-list a.js-open-card-composer:hover { color: black ; text-decoration: underline;} .js-dark-list .cpoints { color: #e8e8e8 ; } }</style>").appendTo("head");
 
 
     /** Make jQuery :contains() selector case insensitive
@@ -105,9 +106,15 @@ $(document).ready(function() {
         .addClass('js-dark-list');
 
         // Magenta, white text
-        $("textarea:contains('Archive')")
+        $("textarea:contains('Archive'), textarea:contains('PRL')")
         .css('color', white)
         .parents('.list').css('background', magenta)
+        .addClass('js-dark-list');
+
+        // Cyan, white text
+        $("textarea:contains('PM')")
+        .css('color', white)
+        .parents('.list').css('background', cyan)
         .addClass('js-dark-list');
 
         // Dark Grey, white text - complete
