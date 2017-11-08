@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Trello coloured lists
-// @version      4.5.0
+// @version      4.6.0
 // @description  Add coloured backgrounds to Trello lists.
 // @author       Gareth J M Saunders
 // @license      GNU General Public License v3.0
@@ -17,14 +17,17 @@ $(document).ready(function() {
     console.log('GJMS: Hey! Trello colour columns Tampermonkey script is running...');
     console.log('GJMS: Loading colours...');
 
-    var red       = '#e06666', // indianred
+    var darkred   = '#a61c00', // firebrick
+        red       = '#e06666', // indianred
         orange    = '#f6b26b', // sandybrown
         yellow    = '#ffd966', // khaki
         green     = '#93c47d', // darkseagreen
+        cyan      = '#45818e', // steelblue
         blue      = '#6fa8dc', // cornflowerblue
+        darkblue  = '#3d85c6', // steelblue
         violet    = '#674ea7', // slateblue
         magenta   = '#a64d79', // royalheath
-        cyan      = '#45818e', // steelblue
+
 
         black     = '#333333', // nightrider
         dark      = '#666666', // dimgray
@@ -79,6 +82,12 @@ $(document).ready(function() {
 
         console.log('GJMS: Changing column colours...');
 
+        // Dark red, white text
+        $("textarea:contains('DarkRed')")
+        .css('color', white)
+        .parents('.list').css('background', darkred)
+        .addClass('js-dark-list');
+
         // Red - danger
         $("textarea:contains('Bugs'), textarea:contains('Fix'), textarea:contains('Issues')")
         .parents('.list').css('background', red);
@@ -95,9 +104,21 @@ $(document).ready(function() {
         $("textarea:contains('Doing'), textarea:contains('In progress')")
         .parents('.list').css('background', green);
 
+        // Cyan, white text
+        $("textarea:contains('PM')")
+        .css('color', white)
+        .parents('.list').css('background', cyan)
+        .addClass('js-dark-list');
+
         // Blue - planning
         $("textarea:contains('Ideas'), textarea:contains('Inbox'), textarea:contains('Planning')")
         .parents('.list').css('background', blue);
+
+        // Dark blue, white text
+        $("textarea:contains('DarkBlue')")
+        .css('color', white)
+        .parents('.list').css('background', darkblue)
+        .addClass('js-dark-list');
 
         // Violet, white text
         $("textarea:contains('Waiting for')")
@@ -109,12 +130,6 @@ $(document).ready(function() {
         $("textarea:contains('Archive'), textarea:contains('PRL')")
         .css('color', white)
         .parents('.list').css('background', magenta)
-        .addClass('js-dark-list');
-
-        // Cyan, white text
-        $("textarea:contains('PM')")
-        .css('color', white)
-        .parents('.list').css('background', cyan)
         .addClass('js-dark-list');
 
         // Dark Grey, white text - complete
