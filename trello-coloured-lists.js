@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Trello coloured lists
-// @version      4.6.0
+// @version      4.6.1
 // @description  Add coloured backgrounds to Trello lists.
 // @author       Gareth J M Saunders
 // @license      GNU General Public License v3.0
@@ -93,11 +93,11 @@ $(document).ready(function() {
         .parents('.list').css('background', red);
 
         // Orange - warning
-        $("textarea:contains('On hold'), textarea:contains('Scheduled')")
+        $("textarea:contains('CSA'), textarea:contains('On hold'), textarea:contains('Scheduled')")
         .parents('.list').css('background', orange);
 
         // Yellow - nearly ready
-        $("textarea:contains('QA'), textarea:contains('Testing')")
+        $("textarea:contains('F.U.N.'), textarea:contains('QA'), textarea:contains('Testing')")
         .parents('.list').css('background', yellow);
 
         // Green - in progress
@@ -127,7 +127,7 @@ $(document).ready(function() {
         .addClass('js-dark-list');
 
         // Magenta, white text
-        $("textarea:contains('Archive'), textarea:contains('PRL')")
+        $("textarea:contains('Archive'), textarea:contains('Consultancy'), textarea:contains('PRL')")
         .css('color', white)
         .parents('.list').css('background', magenta)
         .addClass('js-dark-list');
