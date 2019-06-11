@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Trello coloured lists
-// @version      4.6.1
+// @version      5.0.0
 // @description  Add coloured backgrounds to Trello lists.
 // @author       Gareth J M Saunders
 // @license      GNU General Public License v3.0
@@ -8,7 +8,7 @@
 // @supportURL   https://github.com/garethjmsaunders/trello-coloured-lists/issues
 // @updateURL    https://github.com/garethjmsaunders/trello-coloured-lists/blob/master/trello-coloured-lists.js
 // @include      https://trello.com/*
-// @require      https://code.jquery.com/jquery-3.2.1.min.js
+// @require      https://code.jquery.com/jquery-3.4.1.min.js
 // @grant        none
 // ==/UserScript==
 
@@ -70,15 +70,15 @@ $(document).ready(function() {
 
 
     /** Change colour of Trello columns
-     *  Triggered by hover on the page
+     *  Triggered by setTimeout
      *
-     * @version 4.0.0 2017-11-03
+     * @version 5.0.0 2019-06-11
      * @author  Gareth J M Saunders <gareth@garethjmsaunders.co.uk>
      * @license http://opensource.org/licenses/gpl-license.php, GNU Public License
-     * @since   3.9.0
+     * @since   5.0.0
      */
 
-    $('body').hover(function() {
+    function changeColours() {
 
         console.log('GJMS: Changing column colours...');
 
@@ -127,7 +127,7 @@ $(document).ready(function() {
         .addClass('js-dark-list');
 
         // Magenta, white text
-        $("textarea:contains('Archive'), textarea:contains('Consultancy'), textarea:contains('PRL')")
+        $("textarea:contains('Archive'), textarea:contains('Backlog'), textarea:contains('PRL')")
         .css('color', white)
         .parents('.list').css('background', magenta)
         .addClass('js-dark-list');
@@ -137,7 +137,9 @@ $(document).ready(function() {
         .css('color', white)
         .parents('.list').css('background', dark)
         .addClass('js-dark-list');
+    }
 
-    });
-
+    // Run function after 5 seconds and then again every  5 minutes (300 seconds)
+    setTimeout(changeColours, 5000);
+    setInterval(changeColours, 300000);
 });
