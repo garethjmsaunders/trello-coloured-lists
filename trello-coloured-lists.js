@@ -86,7 +86,7 @@ $(document).ready(function() {
          */
 
         // Dark red, white text
-        $("textarea:contains('Dark red'), textarea:contains('Critical'),")
+        $("textarea:contains('Dark red'), textarea:contains('Critical')")
         .css('color', white)
         .parents('.list').css('background', darkred)
         .addClass('js-dark-list');
