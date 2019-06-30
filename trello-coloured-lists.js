@@ -108,7 +108,7 @@ $(document).ready(function() {
         .parents('.list').css('background', green);
 
         // Cyan, white text - archive / reference
-        $("textarea:contains('Cyan')", textarea:contains('Archive'), textarea:contains('Reference'))
+        $("textarea:contains('Cyan'), textarea:contains('Archive'), textarea:contains('Reference')")
         .css('color', white)
         .parents('.list').css('background', cyan)
         .addClass('js-dark-list');
