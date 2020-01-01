@@ -1,6 +1,7 @@
 # Trello coloured lists
 
-## Easily add colour backgrounds to Trello lists using Tampermonkey by [Gareth J M Saunders](https://www.garethjmsaunders.co.uk/)
+## Easily add colour backgrounds to Trello lists using Tampermonkey
+by [Gareth J M Saunders](https://www.garethjmsaunders.co.uk/)
 
 
 **Trello coloured lists** as a simple JavaScript script for [Tampermonkey](https://tampermonkey.net/). It enables you to easily customise the colours of each list in Trello, based on the list name.
