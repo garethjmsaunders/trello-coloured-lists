@@ -146,7 +146,7 @@ $(document).ready(function() {
         $("span.list-card-title:contains('# Monday'),span.list-card-title:contains('# Tuesday'),span.list-card-title:contains('# Wednesday'),span.list-card-title:contains('# Thursday'),span.list-card-title:contains('# Friday'),span.list-card-title:contains('# ---')")
         .css("color","white")
         .parents('.list-card')
-        .css('background', transparent);
+        .css('background', 'transparent');
 
     }
 
